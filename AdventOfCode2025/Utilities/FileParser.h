@@ -3,12 +3,21 @@
 
 #include <filesystem>
 #include <vector>
+#include <concepts>
+#include <string>
+#include <type_traits>
+
 
 template<typename T>
 class FileParser {
 public:
-	FileParser(std::filesystem::path);
-	~FileParser();
+	explicit FileParser(std::filesystem::path);
+	~FileParser() noexcept;
+
+	template<typename F>
+	requires std::invocable<F, std::string>&& 
+	    std::convertible_to<std::invoke_result_t<F, std::string>, T>
+	void parse(F&& line_parser);
 
 	constexpr std::vector<T>& get_file_list() const;
 
