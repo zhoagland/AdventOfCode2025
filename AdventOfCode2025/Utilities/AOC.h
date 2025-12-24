@@ -1,14 +1,19 @@
 #ifndef _AOC_H_
 #define _AOC_H_
 
+#ifndef __cplusplus
+#error "C++ Header Only"
+#endif // !__cplusplus
+
 #include <filesystem>
+#include <string>
 
 class AOC {
 public:
 	virtual ~AOC() {};
 	virtual int CalculateAnswer() = 0;
 	virtual int CalculatePt2Answer() = 0;
-	virtual int Parser() = 0;
+	virtual int Parser(std::string) = 0;
 
 protected:
 	int test_answer_;

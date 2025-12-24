@@ -1,6 +1,10 @@
 #ifndef _AOC_DAY_1_H_
 #define _AOC_DAY_1_H_
 
+#ifndef __cplusplus
+#error
+#endif // !__cplusplus
+
 #include <memory>
 #include <array>
 
@@ -19,7 +23,7 @@ public:
 	AOC_Day1& operator=(AOC_Day1&& other) = delete;
 
 	int CalculateAnswer();
-	int CalculateAnswerPt2();
+	int CalculatePt2Answer();
 
 private:
 	bool TestCode();

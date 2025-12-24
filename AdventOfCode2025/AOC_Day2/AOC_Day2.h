@@ -1,18 +1,28 @@
 #ifndef _AOC_DAY_2_H_
 #define _AOC_DAY_2_H_
 
-#include "../Utilities/AOC.h"
+#ifndef __cplusplus
+#error
+#endif // !__cplusplus
 
-class AOC_Day2 final : AOC {
+#include "../Utilities/AOC.h"
+#include <string>
+
+struct ID_Range {
+	uint64_t start_;
+	uint64_t end_;
+	ID_Range(uint64_t start, uint64_t end) : start_(start), end_(end) {};
+};
+
+class AOC_Day2 final {
 public:
 	explicit AOC_Day2();
 	~AOC_Day2() noexcept;
 
-	int CalculateAnswer() override;
-	int CalculatePt2Answer() override;
-
+	uint64_t CalculateAnswer();
+	uint64_t CalculatePt2Answer();
 private:
-	int Parser();
+	uint64_t answer_;
 };
 
 #endif // !_AOC_DAY_2_H_

@@ -181,7 +181,7 @@ int AOC_Day1::CalculateAnswer(){
 	return answer_;
 }
 
-int AOC_Day1::CalculateAnswerPt2() {
+int AOC_Day1::CalculatePt2Answer() {
 
 	if (!AOC_Day1::TestCode()) {
 		return -1;

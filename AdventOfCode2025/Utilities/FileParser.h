@@ -1,6 +1,10 @@
 #ifndef _AOC_UTILITIES_H_
 #define _AOC_UTILITIES_H_
 
+#ifndef __cplusplus
+#error
+#endif // !__cplusplus
+
 #include <filesystem>
 #include <vector>
 #include <concepts>
@@ -11,7 +15,7 @@
 template<typename T>
 class FileParser {
 public:
-	explicit FileParser(std::filesystem::path);
+	explicit FileParser(std::filesystem::path path);
 	~FileParser() noexcept;
 
 	template<typename F>
